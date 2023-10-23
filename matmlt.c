@@ -23,7 +23,7 @@ int main(){
             }
         }
         if(row_a != col_b){
-            printf("Invalid calculation!!");
+            printf("Invalid calculation!!\n");
             continue;
         }
         else{
