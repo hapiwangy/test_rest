@@ -48,7 +48,7 @@ int main(){
             // check the matrix state
             // state 1 everything is alright
             if(col == -1 && row == -1) {printf("OK\n");}
-            else if(wrcol != 1 && wrrow !=1) {printf("Corrupt\n");}
+            else if(wrcol != 1 || wrrow !=1) {printf("Corrupt\n");}
             else if((col == -1 && row != -1) || (row == -1 && col != -1)) {printf("Corrupt\n");}
             else {printf("Change bit (%d,%d)\n",(col+1),(row+1));}
         }
