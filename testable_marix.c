@@ -17,6 +17,7 @@ int main(){
             int col=-1,row=-1;
             // loop through the matrix's col
             int count = 0;
+            int wrcol = 0, wrrow = 0;
             while(count < size){
                 int test = 0;
                 for(int j=0;j<size;j++){
@@ -25,6 +26,7 @@ int main(){
                 // check the test bit
                 if (test % 2 == 1){
                     col = count;
+                    wrcol += 1;
                 }
 
                 count += 1;
@@ -39,12 +41,14 @@ int main(){
                 // check the test bit
                 if (test % 2 == 1){
                     row = count;
+                    wrrow += 1;
                 }
                 count += 1;
             }
             // check the matrix state
             // state 1 everything is alright
             if(col == -1 && row == -1) {printf("OK\n");}
+            else if(wrcol != 1 && wrrow !=1) {printf("Corrupt\n");}
             else if((col == -1 && row != -1) || (row == -1 && col != -1)) {printf("Corrupt\n");}
             else {printf("Change bit (%d,%d)\n",(col+1),(row+1));}
         }
